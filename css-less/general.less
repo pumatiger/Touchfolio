@@ -14,7 +14,7 @@
 //  10. Gallery page collapsed layout
 //  11. Media queries < 620px
 //  12. Media queries < 420px
-//  
+//
 ////////////////////////////////////////////////////////////////////
 
 @import "css-less/mixins.less"; // less stuff
@@ -99,7 +99,7 @@ html, body {
 	a {
 		text-decoration: none;
 		border-bottom-color: @sidebar-background;
-		
+
 		color: @menu-item-color;
 		.transition(none, 0);
 	}
@@ -111,7 +111,7 @@ html, body {
 	li.important-item a {
 		background: #afeef5;
 	}
-	
+
 	li.current-menu-item > a {
 		color: @selected-menu-item-color;
 		font-weight: bold;
@@ -127,14 +127,14 @@ html, body {
 
 #gallery-menu {
 	margin: .5em 0 0 0;
-	font-size: @projects-menu-font-size; 
+	font-size: @projects-menu-font-size;
 	line-height: @projects-menu-line-height;
 
 	a {
 		color: @projects-menu-font-color;
-		
+
 	}
-	
+
 	li {
 		&.current-album-menu-item {
 			a {
@@ -257,6 +257,12 @@ a.menu-button {
 		height: auto;
 		vertical-align: bottom;
 	}
+	img.logo-high-res {
+		display: inline;
+	}
+	img.logo-low-res {
+		display: none;
+	}
 }
 .site-description {
 	color: @sidebar-text-color;
@@ -264,6 +270,12 @@ a.menu-button {
 	margin-bottom: @menus-margin / 2 - 2;
 }
 
+.collapsed-layout .logo img.logo-high-res {
+	display: none;
+}
+.collapsed-layout .logo img.logo-low-res {
+	display: inline;
+}
 
 
 
@@ -277,7 +289,7 @@ a.menu-button {
 	line-height: @widget-body-line-height;
 
 	margin: @menus-margin / 2 0 @menus-margin / 2 0;
-	
+
 	.widget-title {
 		font-weight: bold;
 		color: @sidebar-text-color;
@@ -286,7 +298,7 @@ a.menu-button {
 		font-size: @widget-title-font-size;
 		line-height: @widget-title-line-height;
 	}
-	
+
 	li, ul {
 
 		margin-left: 0;
@@ -347,7 +359,7 @@ a.menu-button {
 	.slider-data {
 		display: none;
 	}
-	
+
 	.two-dim-slider {
 		display: none;
 		left: 0;
@@ -523,13 +535,13 @@ a.menu-button {
 			padding: @collapsed-layout-logo-padding;
 		}
 	}
-	
+
 	.main-header {
 		width: 100%;
 		position: relative;
 		padding: 0;
 		margin: 0;
-		
+
 		background: @sidebar-background;
 
 		.menus-container {
@@ -570,10 +582,10 @@ a.menu-button {
 			display: block;
 			overflow: hidden;
 		}
-		
+
 		.site-description {
 			display: none;
-			
+
 		}
 		.menu-button {
 			margin: @collapsed-layout-menu-button-margin;
@@ -583,7 +595,7 @@ a.menu-button {
 	.menu-sep {
 		display: none;
 	}
-	
+
 	#main {
 		width: 100%;
 		clear: both;
@@ -629,9 +641,9 @@ a.menu-button {
 	  	border-left: none;
 	}
 	.hentry, #comments, #nav-below {
-		max-width: none;		
+		max-width: none;
 	}
-	
+
 	.site-content {
 		margin: 0;
 	}
@@ -715,10 +727,10 @@ a.menu-button {
 		&::-webkit-scrollbar-thumb:hover {
 			background-color:fadeout(@menu-item-color, 70%);
 		}
-		
+
 		width: auto;
 		max-width: none;
-	} 
+	}
 	.main-header {
 		width: auto;
 		height: auto;
@@ -815,11 +827,11 @@ a.menu-button {
 ////////////////////////////////////////////
 
 @media only screen and (max-width: 500px) {
-	
+
 	.album-info-block {
 		font-size: 85%;
 	}
-	.collapsed-layout { 
+	.collapsed-layout {
 		#primary,
 		#secondary .widget,
 		.footer-copy p {
@@ -868,7 +880,7 @@ a.menu-button {
 			padding-bottom: 1em;
 		}
 	}
-	
+
 
 
 
