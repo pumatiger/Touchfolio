@@ -54,8 +54,8 @@
 					$logo = get_ds_option( 'main_logo' );
 					$logo_mobile = get_ds_option( 'main_logo_mobile' );
 					if ( $logo && $logo_mobile ) {
-						echo '<img class="main-logo" alt="' . __( 'home', 'dsframework' ) . '" src="' . $logo . '" />';
-						echo '<img class="main-logo-mobile" alt="' . __( 'home', 'dsframework' ) . '" src="' . $logo_mobile . '" />';
+						echo '<img class="logo-high-res" alt="' . __( 'home', 'dsframework' ) . '" src="' . $logo . '" />';
+						echo '<img class="logo-low-res" alt="' . __( 'home', 'dsframework' ) . '" src="' . $logo_mobile . '" />';
 					} elseif ( $logo ) {
 						echo '<img alt="' . __( 'home', 'dsframework' ) . '" src="' . $logo . '" />';
 					} else {

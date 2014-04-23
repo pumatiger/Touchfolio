@@ -73,13 +73,13 @@ $of_options[] = array( "name" => __("General Settings", 'dsframework'),
                     "type" => "heading");
 
 $of_options[] = array( "name" => __("Logo", 'dsframework'),
-					"desc" => __("Main logo image. Default size is 97px x 16px. If blank site title text will be used.<br/>Size and position on different screen sizes and pages may be configured in selected skin less css file.", 'dsframework'),
+					"desc" => __("Main logo image. Default size is 97px x 16px. If blank site title text will be used.", 'dsframework'),
 					"id" => "main_logo",
 					"std" => "",
 					"type" => "media");
 
 $of_options[] = array( "name" => __("Logo Mobile", 'dsframework'),
-                    "desc" => __("Main logo image for mobile devices.", 'dsframework'),
+                    "desc" => __("Main logo image for mobile devices. Main logo will be used for both desktop browsers and mobile devices if no specific mobile logo assigned.", 'dsframework'),
                     "id" => "main_logo_mobile",
                     "std" => "",
                     "type" => "media");
