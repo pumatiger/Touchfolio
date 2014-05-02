@@ -84,6 +84,11 @@ $of_options[] = array( "name" => __("Logo Mobile", 'dsframework'),
                     "std" => "",
                     "type" => "media");
 
+$of_options[] = array( "name" => __("Display Site Description", 'dsframework'),
+                    "desc" => __("Show/Hide Site Description below Blog Title/Logo"),
+                    "id" => "display_site_desc",
+                    "std" => 1,
+                    "type" => "checkbox");
 
 $of_options[] = array( "name" => __("Tracking Code", 'dsframework'),
 					"desc" => __("Paste your Google Analytics (or other) tracking code here. This will be added into the footer template of your theme.", 'dsframework'),

@@ -64,7 +64,11 @@
 					?>
 				</a>
 			</h1>
-			<div class="site-description"><?php bloginfo( 'description' ); ?></div>
+			<?php
+				$display_site_desc = get_ds_option('display_site_desc');
+				if ( $display_site_desc == 1 ) { ?>
+					<div class="site-description"><?php bloginfo( 'description' ); ?></div>
+				<?php } ?>
 		</section>
 		<div class="menus-container">
 			<span class="menu-sep">&mdash;</span>
