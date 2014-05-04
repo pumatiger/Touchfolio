@@ -31,7 +31,7 @@ if ( ! function_exists( 'ds_get_og_image' ) ) {
 	function ds_get_og_image() {
 		global $post, $posts;
 		$first_img = '';
-		
+
 		if(has_post_thumbnail($post->ID)) {
 			$first_img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID),'thumbnail' );
 			$first_img = $first_img[0];
@@ -73,20 +73,20 @@ if ( ! function_exists( 'ds_get_og_image' ) ) {
 /*-----------------------------------------------------------------------------------*/
 
 // Paths to admin functions
-define('ADMIN_PATH', STYLESHEETPATH . '/admin/');
+define('ADMIN_PATH', get_template_directory() . '/admin/');
 define('ADMIN_DIR', get_template_directory_uri() . '/admin/');
 define('LAYOUT_PATH', ADMIN_PATH . '/layouts/');
 
-$themedata = wp_get_theme(STYLESHEETPATH . '/style.css');
+$themedata = wp_get_theme(get_template_directory() . '/style.css');
 define('THEMENAME', $themedata->get['Name']);
-define('OPTIONS', 'of_options'); 
-define('BACKUPS','of_backups'); 
+define('OPTIONS', 'of_options');
+define('BACKUPS','of_backups');
 
 // Build Options
-require_once (ADMIN_PATH . 'admin-interface.php');	
-require_once (ADMIN_PATH . 'theme-options.php'); 	
-require_once (ADMIN_PATH . 'admin-functions.php'); 
-require_once (ADMIN_PATH . 'medialibrary-uploader.php'); 
+require_once (ADMIN_PATH . 'admin-interface.php');
+require_once (ADMIN_PATH . 'theme-options.php');
+require_once (ADMIN_PATH . 'admin-functions.php');
+require_once (ADMIN_PATH . 'medialibrary-uploader.php');
 
 
 global $data;
@@ -102,7 +102,7 @@ function get_ds_option($opt_name) {
 // Setup less-css plugin
 if(USE_LESS_CSS) {
 	require DS_THEME_DIR . '/inc/plugins/wp-less/bootstrap-for-theme.php';
-	
+
 	$WPLessPlugin->dispatch( );
 }
 
@@ -139,7 +139,7 @@ function dsframework_setup() {
 	 * Translations can be filed in the /languages/ directory
 	 */
 	load_theme_textdomain( 'dsframework', get_template_directory() . '/languages' );
-	
+
 
 	/**
 	 * Add default posts and comments RSS feed links to head
@@ -198,7 +198,7 @@ function dsframework_scripts() {
 		} else {
 			wp_enqueue_style( 'style', get_stylesheet_uri() );
 		}
-		
+
 		wp_enqueue_script( 'jquery' );
 
 		if ( is_page_template('ds-gallery-masonry-template.php') ) {
@@ -230,9 +230,9 @@ function dsframework_scripts() {
 		wp_localize_script( 'main-theme-js', 'dsframework_vars', array(
 							'select_menu_text' => __('&mdash; Select page &mdash;', 'dsframework'),
 							'social_menu_text' => __('&mdash;', 'dsframework'),
-							'menu_text' => __('menu', 'dsframework') ));	
+							'menu_text' => __('menu', 'dsframework') ));
 	}
-	
+
 }
 add_action( 'wp', 'dsframework_scripts' );
 
@@ -241,7 +241,7 @@ add_action( 'wp', 'dsframework_scripts' );
 
 // custom excerpt length
 function new_excerpt_length($length) {
-	return 35; 
+	return 35;
 }
 add_filter('excerpt_length', 'new_excerpt_length');
 
@@ -257,13 +257,13 @@ add_filter('excerpt_more', 'new_excerpt_more');
 function dsframework_admin_scripts_and_styles() {
 		wp_enqueue_style( 'thickbox' );
 		wp_enqueue_style('colorpicker-css', DS_THEME_PATH . '/admin/js/colorpicker/css/colorpicker.css');
-		
+
 
 		wp_enqueue_style('colorbox-css', DS_THEME_PATH . '/admin/js/colorbox/colorbox.css');
 		wp_enqueue_style('dsframework-admin-css', DS_THEME_PATH . '/admin/css/admin.css');
-    
+
    		wp_enqueue_script( 'thickbox' );
-   		
+
 		wp_enqueue_script( 'media-upload' );
 		wp_enqueue_script( 'jquery-ui-sortable');
 
@@ -281,7 +281,7 @@ function dsframework_admin_scripts_and_styles() {
 							'adding_to_album_text' => __('Adding...', 'dsframework'),
 							'inserting_error_text' => __('Inserting error. Please try again.', 'dsframework'),
 							'added_to_album_text' => __('Added', 'dsframework')
-		));	
+		));
 }
 
 function dsframework_add_admin_scripts( $hook ) {
